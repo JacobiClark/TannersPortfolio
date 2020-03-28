@@ -28,7 +28,7 @@ class NavBar extends Component {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/">Tanner Jensen</Navbar.Brand>
         <Nav className="mr-auto">
-          <StyledNavLink href="/Comics">Comics</StyledNavLink>
+          <StyledNavLink href="/Comics">Comsics</StyledNavLink>
           <StyledNavLink href="/InkIllustrations">Ink Illustrations</StyledNavLink>
           <StyledNavLink href="/Storyboards">Storyboards</StyledNavLink>
           <StyledNavLink href="/Contact">Contact</StyledNavLink>
