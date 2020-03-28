@@ -5,7 +5,21 @@ import styled from 'styled-components'
 const StyledDropdownItem = styled(Dropdown.Item)`
   background-color: palevioletred;
   color: white;
-`;
+`
+
+const StyledDropdown = styled(Dropdown)`
+  display: block;
+  @media (min-width: 900px) {
+    display: none;
+  }
+`
+
+const StyledNavLink = styled(Nav.Link)`
+  display: inline;
+  @media (min-width: 900px) {
+    display: none;
+  }
+`
 
 
 class NavBar extends Component {
@@ -14,12 +28,12 @@ class NavBar extends Component {
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/">Tanner Jensen</Navbar.Brand>
         <Nav className="mr-auto">
-          <Nav.Link href="/Comics">Comics</Nav.Link>
-          <Nav.Link href="/InkIllustrations">Ink Illustrations</Nav.Link>
-          <Nav.Link href="/Storyboards">Storyboards</Nav.Link>
-          <Nav.Link href="/Contact">Contact</Nav.Link>
+          <StyledNavLink href="/Comics">Comics</StyledNavLink>
+          <StyledNavLink href="/InkIllustrations">Ink Illustrations</StyledNavLink>
+          <StyledNavLink href="/Storyboards">Storyboards</StyledNavLink>
+          <StyledNavLink href="/Contact">Contact</StyledNavLink>
         </Nav>
-        <Dropdown>
+        <StyledDropdown>
           <Dropdown.Toggle variant="secondary" id="dropdown-basic">
             Menu
           </Dropdown.Toggle>
@@ -29,7 +43,7 @@ class NavBar extends Component {
             <StyledDropdownItem href="/Storyboards">Storyboards</StyledDropdownItem>
             <StyledDropdownItem href="/Contact">Contact</StyledDropdownItem>
           </Dropdown.Menu>
-        </Dropdown>
+        </StyledDropdown>
       </Navbar>
     )          
   }
