@@ -27,7 +27,7 @@ class NavBar extends Component {
     return (
       <Navbar bg="dark" variant="dark">
         <Navbar.Brand href="/">Tanner Jensen</Navbar.Brand>
-        <Nav className="mr-auto">
+        <Nav>
           <StyledNavLink href="/Comics">Comics</StyledNavLink>
           <StyledNavLink href="/InkIllustrations">Ink Illustrations</StyledNavLink>
           <StyledNavLink href="/Storyboards">Storyboards</StyledNavLink>
@@ -37,7 +37,7 @@ class NavBar extends Component {
           <Dropdown.Toggle variant="secondary" id="dropdown-basic">
             Menu
           </Dropdown.Toggle>
-          <Dropdown.Menu style={{backgroundColor: "red"}} alignRight variant="dark">
+          <Dropdown.Menu alignRight variant="dark">
             <StyledDropdownItem href="/Comics">Comics</StyledDropdownItem>
             <StyledDropdownItem href="/InkIllustrations">Ink Illustrations</StyledDropdownItem>
             <StyledDropdownItem href="/Storyboards">Storyboards</StyledDropdownItem>

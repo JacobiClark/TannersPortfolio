@@ -8,6 +8,8 @@ const MediaContainer = styled.div`
   flex-wrap: wrap;
   align-items: top;
   justify-content: center;
+  margin: 0 auto;
+  max-width: 1500px;
 `
 
 
