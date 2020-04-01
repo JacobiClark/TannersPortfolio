@@ -6,16 +6,31 @@ import { ListGroup, Nav } from 'react-bootstrap';
 
 
 const LandingContainer = styled.div`
-  align-self: center;
-  display: flex;
-	justify-content: center;
-	background-color: #E3E3E3;
-`
-const LandingImage = styled.img`
 	align-self: center;
-	height: 95vh;
-	width: auto;
-	max-width: 100vw;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: top;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 1500px;
+	background-color: #E3E3E3;
+	min-height: 70vh;
+`
+const NavPiece = styled.a`
+  height: auto;
+  width: 45%;
+	margin: 2%;
+	text-align: center;
+  @media (min-width: 900px) {
+    width: 28%
+  }
+`
+const NavImage = styled.img`
+	margin-top: 2.5%;
+  height: auto;
+  width: 95%;
+	max-height: 170px;
+	align-text: center;
 `
 const StyledNav = styled(Nav)`
 	position: absolute;
@@ -36,21 +51,26 @@ const StyledListItem = styled(ListGroup.Item)`
 class Landing extends React.Component {
     render() {
       return (
-				<LandingContainer id="land" >
-					<LandingImage src={this.props.image.imgSrc} alt={this.props.image.title} />
-					<StyledNav>
-						<StyledNavLink href="/Comics">Comics</StyledNavLink>
-						<StyledNavLink href="/InkIllustrations">Ink Illustrations</StyledNavLink>
-						<StyledNavLink href="/Storyboards">Storyboards</StyledNavLink>
-						<StyledNavLink href="/Contact">Contact</StyledNavLink>
-					</StyledNav>
+				<LandingContainer >
+					{this.props.images.map((image) => {
+     		    return (
+
+								<NavPiece href={image.path}>
+									<NavImage src={image.imgSrc} alt={image.title} />
+									<h4>{image.title}</h4>
+								</NavPiece>
+
+
+						)
+        	})}
+
 				</LandingContainer>
 			)
     }
   }
 
 Landing.propTypes = {
-    image: PropTypes.array.isRequired
+    images: PropTypes.array.isRequired
 }
 export default Landing;
 

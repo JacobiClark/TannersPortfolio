@@ -20,8 +20,7 @@ const StyledCarouselImage = styled(Carousel.Item)`
   align-self: center;
   max-height: 90vh;
   max-width: 100%
-  width: auto;
-  max-width: 100vw;
+  width: 90%;
 `
 
 

@@ -3,9 +3,18 @@ import PropTypes from 'prop-types'
 import { Card, Button } from 'react-bootstrap';
 import styled from 'styled-components'
 
+const MediaContainer = styled.div`
+	align-self: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: top;
+	justify-content: center;
+	margin: 0 auto;
+	max-width: 1500px;
+`
+
 const StyledCard = styled(Card)`
-  width: 45%;
-  margin: 2%
+  width: 85%;
 `
 const StyledBody = styled(Card.Body)`
   backgroundColor: {this.props.storyboardMenuItems.color};
@@ -21,13 +30,13 @@ const StyledCardImage = styled(Card.Img)`
 class StoryboardMenu extends React.Component {
     render() {
       return (
-        <div className="media-container">
+        <MediaContainer>
           {this.props.storyboardMenuItems.map((menuItem) => {
             return (
               <StyledCard>
                 <a href={menuItem.path}>
                 <StyledCardImage src={menuItem.iconImage} alt={menuItem.title} />
-                <Card.Body style={{ backgroundColor:"red" }}>
+                <Card.Body style={{ backgroundColor:"blue" }}>
                   <Card.Title style={{textAlign:"center"}}>{menuItem.title}</Card.Title>
                   <Card.Text style={{textAlign:"center"}}>
                     Description of your {menuItem.title} storyboard...
@@ -36,7 +45,7 @@ class StoryboardMenu extends React.Component {
               </StyledCard>
             )
           })}
-        </div>
+        </MediaContainer>
       )
     }
   }
