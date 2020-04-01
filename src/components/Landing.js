@@ -17,34 +17,25 @@ const LandingContainer = styled.div`
 	min-height: 70vh;
 `
 const NavPiece = styled.a`
+	align-content: center;
+	background-color: red;
   height: auto;
-  width: 45%;
+	width: 45%;
+	height: 35%;
 	margin: 2%;
-	text-align: center;
   @media (min-width: 900px) {
     width: 28%
   }
 `
 const NavImage = styled.img`
-	margin-top: 2.5%;
-  height: auto;
+	margin: 2.5%;
+  height: 80%;
   width: 95%;
 	max-height: 170px;
-	align-text: center;
-`
-const StyledNav = styled(Nav)`
-	position: absolute;
-	display: block;
-	left: 35%;
-`
-const StyledNavLink = styled(Nav.Link)`
-	font-size: 1.5em;
-	height: 40px;
 `
 
-
-const StyledListItem = styled(ListGroup.Item)`
-	background: transparent;
+const NavText = styled.h4`
+	margin-bottom: auto;
 `
 
 
@@ -54,13 +45,10 @@ class Landing extends React.Component {
 				<LandingContainer >
 					{this.props.images.map((image) => {
      		    return (
-
 								<NavPiece href={image.path}>
 									<NavImage src={image.imgSrc} alt={image.title} />
-									<h4>{image.title}</h4>
+									<NavText>{image.title}</NavText>
 								</NavPiece>
-
-
 						)
         	})}
 
