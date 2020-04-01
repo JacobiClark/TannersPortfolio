@@ -15,7 +15,7 @@ const MediaContainer = styled.div`
 
 const ArtPiece = styled.img`
 	width: 95%;
-	height: auto;
+	height: 84px;
 	margin: 2%;
 	@media (min-width: 900px) {
 		width: 45%
